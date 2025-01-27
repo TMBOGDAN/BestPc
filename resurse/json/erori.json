@@ -1,0 +1,31 @@
+{
+  "cale_baza": "/imagini/erori",
+  "eroare_default": {
+    "titlu": "Eroare server",
+    "text": "A apărut o eroare neașteptată.",
+    "imagine": "default.png"
+  },
+  "info_erori": [
+    {
+      "identificator": 403,
+      "status": 403,
+      "titlu": "Acces interzis",
+      "text": "Nu aveți permisiunea de a accesa acest folder.",
+      "imagine": "403.png"
+    },
+    {
+      "identificator": 400,
+      "status": 400,
+      "titlu": "Cerere invalidă",
+      "text": "Tipul cererii nu este permis.",
+      "imagine": "400.png"
+    },
+    {
+      "identificator": 404,
+      "status": 404,
+      "titlu": "Pagina nu a fost găsită",
+      "text": "Pagina pe care o căutați nu există.",
+      "imagine": "404.png"
+    }
+  ]
+}

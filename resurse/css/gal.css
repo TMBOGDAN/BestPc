@@ -1,0 +1,71 @@
+
+.h1{
+  text-align: center;
+}
+
+.galerie {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
+  grid-template-rows: auto;
+  background-color: #f8cba7;;
+  border: 10px solid white;
+  border-radius: 15px;
+}
+
+.imagine-galerie {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.imagine-galerie img {
+  width: 100%;
+  height: auto;
+  transition: transform 1.25s ease, opacity 0.5s ease;
+  border-radius: 8px;
+}
+
+.imagine-galerie:hover img {
+  transform: scale(1.3) translateY(-20%);
+  opacity: 0.9;
+}
+
+.imagine-galerie.invisibil {
+  visibility: hidden; /* Make the element invisible */
+
+  overflow: hidden;
+}
+
+
+
+.imagine-galerie figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  transition: background-color 1.25s ease, color 1.25s ease;
+  font-size: 1.2rem;
+}
+
+.imagine-galerie:hover figcaption {
+  background-color: #ff0808;;
+  color: black;
+}
+
+@media (max-width: 900px) {
+  .galerie {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .galerie {
+    grid-template-columns: 1fr;
+  }
+}

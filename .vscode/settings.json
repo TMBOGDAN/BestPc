@@ -1,0 +1,7 @@
+{
+    "Codegeex.GenerationPreference": "automatic",
+    "Codegeex.Chat.LanguagePreference": "中文",
+    "Codegeex.Comment.LanguagePreference": "中文",
+    "Codegeex.CommitMessage.LanguagePreference": "中文",
+    "Codegeex.CommitMessageStyle": "ConventionalCommits"
+}

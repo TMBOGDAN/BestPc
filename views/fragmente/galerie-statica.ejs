@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/resurse/css/gal.css">
+<div class="galerie">
+  <% imagini.forEach((imagine, index) => { %>
+    <figure class="imagine-galerie <%= imagine.esteVizibila ? '' : 'invisibil' %>">
+      <picture>
+        <img src="<%= caleImagini + imagine.cale_imagine %>" alt="<%= imagine.alt || imagine.titlu %>" title="<%= imagine.descriere %>">
+      </picture>
+      <figcaption>
+        <span class="index"><%= String.fromCharCode(97 + index) %>.</span>
+        <span><%= imagine.descriere %></span>
+      </figcaption>
+    </figure>
+  <% }) %>
+</div>
+
+

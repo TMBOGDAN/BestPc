@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ro">
+   
+<%- include('../fragmente/head') %>   <!-- Include head fragment -->
+
+
+
+
+
+<body>
+
+    <%- include('../fragmente/header') %> <!-- Include header fragment -->
+
+   
+    <!--tabel-->
+    <div class="tabel-container">
+        <table id="stilizare-tabel">
+            <caption >Oferte pentru clienți</caption>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Produs</th>
+                    <th>Preț</th>
+                    <th>Stoc</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Laptop</td>
+                    <td>$800</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Smartphone</td>
+                    <td>$500</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Televizor</td>
+                    <td>$1200</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>$2500</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Mulțumim pentru vizită!</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+    <div class="grid-container">
+
+         <!-- descriere-->
+            <div id="descriere"> 
+        <h2>Cine suntem</h2>
+        <p>Un site modern de vânzare calculatoare oferă o gamă variată de produse pentru gaming, office și design, personalizabile după nevoi. Cu descrieri detaliate, opțiuni flexibile de plată și suport dedicat, clienții pot alege rapid soluția ideală. Promovăm calitatea și inovația la prețuri accesibile.</p>
+
+            </div>
+
+        <!-- tutorial-->
+        <div id="videoclip" class="video-container">
+            <h2>Cum asamblăm un calculator</h2>
+            <p>Vezi videoclipurile nostru pentru mai multe detalii:</p>
+        
+            <!-- iframe cu video -->
+            <iframe name="video-frame" width="560" height="315" src="https://www.youtube.com/embed/wl00f0EjZHs?si=TlckgNu-DhCyI6AT" frameborder="0" allowfullscreen></iframe>
+        
+            <!-- Butoane pentru schimbarea video-urilor -->
+            <div class="button-container">
+                <a href="https://www.youtube.com/embed/wl00f0EjZHs" target="video-frame">Video 1</a>
+                <a href="https://www.youtube.com/embed/ksWEPVOOWWA" target="video-frame">Video 2</a>
+                <a href="https://www.youtube.com/embed/ZYGND_SLqUQ" target="video-frame">Video 3</a>
+            </div>
+        </div>
+        
+
+         <!-- reduceri-->
+             <div id="reduceri">
+            <h2>%Promotii%</h2>
+                <ul>
+                    <img src="resurse/imagini/promotii/reduceri.png" style="border: 5px solid rgb(190, 11, 11);" >
+                    <ul>
+                           <li><h4>5 ianuarie 10% reducere</h3></li> 
+                            <li><h4>14 februarie 20% reducere</h3></li>
+                                <li><h4>1 martie 30% reducere</h3></li>
+                    </ul>
+                   
+                       
+                        
+             </ul>
+            </div>
+        
+           
+    
+        <!-- Q&a-->
+            
+             <div id="intrebari_frecvente">
+                    <h2>Întrebări frecvente (Q&A)</h2>
+                    
+                
+                    <div class="qa">
+                        <details>
+                            <summary>Ce tip de calculator am nevoie pentru gaming?</summary>
+                            <p>Pentru gaming, recomandăm un calculator cu procesor puternic (minim Intel Core i5), placă video dedicată (de exemplu, NVIDIA RTX 3060 sau mai bună), și cel puțin 16 GB de memorie RAM pentru o experiență fluidă în jocuri de ultimă generație.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Ce diferență există între SSD și HDD?</summary>
+                            <p>SSD (Solid State Drive) oferă viteze mult mai mari de citire și scriere comparativ cu HDD (Hard Disk Drive), ceea ce face ca sistemul de operare și aplicațiile să se încarce mult mai rapid. HDD este mai ieftin și oferă mai mult spațiu de stocare la prețuri mai mici, dar este mai lent.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Este necesar să am o placă video dedicată?</summary>
+                            <p>Nu este absolut necesar dacă nu intenționezi să faci activități care necesită grafică intensă, precum jocuri sau editare video. Plăcile video integrate sunt suficient de bune pentru uzul zilnic și navigarea pe internet, însă pentru gaming sau design 3D, o placă video dedicată este recomandată.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Cât de multă memorie RAM este necesară pentru un PC performant?</summary>
+                            <p>Pentru uzul general și activități precum navigarea pe internet sau birou, 8 GB de RAM sunt suficienți. Pentru gaming sau editare video, recomandăm cel puțin 16 GB de RAM, iar pentru sarcini foarte intensive, cum ar fi randarea sau lucrul cu software de inginerie, 32 GB sau mai mult ar fi ideali.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Ce este overclocking-ul și este sigur?</summary>
+                            <p>Overclocking-ul presupune creșterea frecvenței procesorului sau a plăcii video pentru a obține performanțe mai mari. Deși poate aduce îmbunătățiri de performanță, acesta poate genera și mai multă căldură, iar în cazul în care nu este făcut corect, poate duce la deteriorarea componentelor. Este recomandat să fii foarte atent și să folosești sisteme de răcire eficiente.</p>
+                        </details>
+                
+                        <!-- Întrebări noi -->
+                        <details>
+                            <summary>Ce tip de monitor este recomandat pentru gaming?</summary>
+                            <p>Recomandăm un monitor cu o rată mare de refresh (minimum 120Hz) și un timp de răspuns cât mai scăzut pentru o experiență de gaming fluidă. De asemenea, un monitor cu rezoluție 1440p sau 4K poate oferi o calitate vizuală superioară, iar pentru gaming competitiv, un ecran cu FreeSync sau G-Sync este ideal.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Este importantă răcirea în cazul unui PC gaming?</summary>
+                            <p>Da, răcirea este esențială pentru a menține componentele într-o temperatură optimă și a preveni supraîncălzirea, care poate duce la scăderea performanței sau deteriorarea componentelor. Un sistem de răcire bine optimizat poate include ventilatoare de calitate sau un sistem de răcire pe apă.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Ce este o placă de bază și ce rol are?</summary>
+                            <p>Placa de bază este componenta principală a unui PC, care leagă toate celelalte componente (procesor, memorie RAM, placă video, hard disk/SSD) între ele. Aceasta asigură comunicația între componente și furnizează alimentare. Alegerea unei plăci de bază compatibile cu restul componentelor este esențială pentru un sistem performant.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Ce înseamnă un PC "all-in-one"?</summary>
+                            <p>Un PC "all-in-one" integrează toate componentele unui computer (procesor, RAM, hard disk, etc.) într-o singură unitate, fără a avea o unitate separată de tip tower. Aceste sisteme sunt mai compacte și economisesc spațiu, fiind ideale pentru birouri sau acasă, dar pot fi mai limitate în ceea ce privește opțiunile de upgrade comparativ cu un PC desktop tradițional.</p>
+                        </details>
+                
+                        <details>
+                            <summary>Care este diferența între un procesor Intel și unul AMD?</summary>
+                            <p>Ambele mărci oferă procesoare de performanță, dar Intel este cunoscut pentru performanța ridicată pe fiecare nucleu, în timp ce AMD oferă procesoare multi-core mai performante în sarcini ce necesită multitasking sau sarcini de tip parallel. Alegerea între cele două depinde de nevoile tale: pentru gaming, Intel poate fi mai bun, iar pentru editare video sau streaming, AMD poate fi mai eficient.</p>
+                        </details>
+                    </div>
+                
+               
+            
+            
+            </div>
+            
+         <!-- parteneri-->
+            <div id="parteneri">
+                <div id="text">
+                    Parteneri
+                    <div id="text-reflectat">
+                       Parteneri
+                    </div>
+                </div>
+            
+                <br><br><br>
+
+                <p>Colaborăm cu lideri în domeniu pentru a oferi cele mai bune soluții pentru clienții noștri.</p>
+                <p>Vizitează partenerul nostru de încredere: <a href="https://www.pcgarage.ro/" target="_blank">PC Garage</a>.</p>
+            </div>
+    </div>
+
+
+    <div id="imagine-efect">
+       
+    </div>
+
+            
+    
+    <a href="#top" id="link-top" class="scroll-top">
+        <span class="arrow">&#5123;</span>
+        <span class="tooltip"></span>
+    </a>
+    
+
+ 
+    
+   
+
+
+  
+
+
+
+
+<!-- footer-->
+<%- include('../fragmente/footer') %> <!-- Include footer fragment -->
+
+            
+</body>
+</html>

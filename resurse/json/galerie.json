@@ -1,0 +1,101 @@
+{
+    "cale_galerie": "/resurse/imagini/galerie",
+    "imagini": [
+        {
+            "cale_imagine": "1.jpeg",
+            "titlu": "Imagine 1",
+            "descriere": "Descriere imagine 1",
+            "timp": "10:00-24:20",
+            "alt": "Imagine 1",
+            "atributie": "Autor 1"
+        },
+        {
+            "cale_imagine": "2.jpeg",
+            "titlu": "Imagine 2",
+            "descriere": "Descriere imagine 2",
+            "timp": "00:00-9:00",
+            "alt": "Imagine 2",
+            "atributie": "Autor 2"
+        },
+        {
+            "cale_imagine": "3.jpeg",
+            "titlu": "Imagine 3",
+            "descriere": "Descriere imagine 3",
+            "timp": "01:00-23:00",
+            "alt": "Imagine 3",
+            "atributie": "Autor 3"
+        },
+        {
+            "cale_imagine": "4.jpeg",
+            "titlu": "Imagine 4",
+            "descriere": "Descriere imagine 4",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 4",
+            "atributie": "Autor 4"
+        },
+        {
+            "cale_imagine": "5.jpeg",
+            "titlu": "Imagine 5",
+            "descriere": "Descriere imagine 5",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 5",
+            "atributie": "Autor 5"
+        },
+        {
+            "cale_imagine": "6.jpeg",
+            "titlu": "Imagine 6",
+            "descriere": "Descriere imagine 6",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 6",
+            "atributie": "Autor 6"
+        },
+        {
+            "cale_imagine": "7.jpeg",
+            "titlu": "Imagine 7",
+            "descriere": "Descriere imagine 7",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 7",
+            "atributie": "Autor 7"
+        },
+        {
+            "cale_imagine": "8.jpg",
+            "titlu": "Imagine 8",
+            "descriere": "Descriere imagine 8",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 8",
+            "atributie": "Autor 8"
+        },
+        {
+            "cale_imagine": "9.jpg",
+            "titlu": "Imagine 9",
+            "descriere": "Descriere imagine 9",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 9",
+            "atributie": "Autor 9"
+        },
+        {
+            "cale_imagine": "10.jpg",
+            "titlu": "Imagine 10",
+            "descriere": "Descriere imagine 10",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 10",
+            "atributie": "Autor 10"
+        },
+        {
+            "cale_imagine": "11.jpg",
+            "titlu": "Imagine 11",
+            "descriere": "Descriere imagine 11",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 11",
+            "atributie": "Autor 11"
+        },
+        {
+            "cale_imagine": "12.jpg",
+            "titlu": "Imagine 12",
+            "descriere": "Descriere imagine 12",
+            "timp": "00:00-24:00",
+            "alt": "Imagine 12",
+            "atributie": "Autor 12"
+        }
+    ]
+}

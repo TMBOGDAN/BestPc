@@ -1,0 +1,537 @@
+/* Definirea variabilelor pentru culori, spacing și fonturi */
+:root {
+    --culoare-principala: #b22222;
+    --culoare-secundara: #ff0808;
+    --culoare-accente: #ffffff;
+    --culoare-text: #000000;
+    --culoare-background: #2f2f2f;
+    --culoare-link-vizitat: #8b0000; /* Adăugat variabilă pentru linkuri vizitate */
+    --color-link-visited: #8b0000; /* Variabilă pentru linkuri vizitate */
+    --color-hover-external: #ff0808; /* Variabilă pentru hover pe linkuri externe */
+    --color-hover-ripple: #b22222; /* Variabilă pentru efectul ripple */
+    
+    --spacing-large: 20px;
+    --spacing-medium: 15px;
+    --spacing-small: 10px;
+    
+    --grid-gap-large: 20px;
+    --grid-gap-medium: 15px;
+    --grid-gap-small: 10px;
+    
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 20px;
+}
+
+/* Stiluri pentru header */
+header {
+    background-color: var(--culoare-principala);
+    padding: var(--spacing-large);
+    text-align: center;
+    border: 10px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-large) 0;
+    
+    ul{
+        list-style-type: none;
+        
+    }
+
+}
+
+header h1, header h2 {
+    color: var(--culoare-accente);
+}
+
+/* Stiluri pentru body și container */
+body {
+    background-color: var(--culoare-background);
+    color: var(--culoare-text);
+    margin: 0;
+    font-size: var(--font-size-medium);
+}
+
+.container {
+    padding: 0 var(--spacing-large);
+}
+
+/* Stiluri pentru imagini, video și iframe */
+img, video, iframe {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    max-width: 100%;
+    max-height: 500px;
+    min-width: 250px;
+    min-height: 150px;
+}
+
+/* Stiluri pentru butoane */
+button {
+    background-color: var(--culoare-principala);
+    color: white;
+    border: 10px solid var(--culoare-border);
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: var(--culoare-secundara);
+}
+
+/* Stiluri pentru footer */
+footer {
+    background-color: var(--culoare-principala);
+    color: var(--culoare-accente);
+}
+
+/* Linkuri */
+a {
+    color: var(--culoare-accente);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--culoare-text);
+}
+
+/* Stiluri pentru linkuri vizitate */
+a:visited {
+    color: var(--color-link-visited);
+}
+
+/* Stiluri pentru linkuri externe */
+a[href^="http"]::before {
+    content: "\27B3 "; /* Simbol ⮳ */
+    font-size: 1.5em; /* 50% mai mare decât dimensiunea fontului linkului */
+    color: inherit; /* Moștenește culoarea textului */
+    margin-right: 0.2em; /* Spațiu între simbol și text */
+}
+
+a[href^="http"]:hover::before {
+    color: var(--color-hover-external);
+}
+
+/* Efect pentru linkurile din conținutul paginii */
+main a, .grid-container a, .tabel-container a, footer a {
+    position: relative;
+    color: inherit; /* Moștenește culoarea textului */
+    text-decoration: none; /* Elimină sublinierea implicită */
+    background-image: radial-gradient(circle, 
+        var(--color-hover-ripple) 0%, 
+        var(--color-hover-ripple) 40%, 
+        transparent 80%, 
+        transparent 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0%;
+    transition: background-size 0.3s ease-in-out;
+    border-radius: 50%; /* Face gradientul circular */
+}
+
+main a:hover, .grid-container a:hover, .tabel-container a:hover, footer a:hover {
+    background-size: 100%;
+}
+
+main a:active, .grid-container a:active, .tabel-container a:active, footer a:active {
+    border: 2px solid var(--culoare-secundara);
+}
+
+/* Stiluri pentru linkuri buton */
+#videoclip .button-container a {
+    background-color: var(--culoare-principala);
+    color: var(--culoare-accente);
+    text-decoration: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin: 0; /* Elimină orice margine între butoane */
+    border-radius: 0 0 7px 7px; /* Rotunjire doar pe colțurile de jos */
+    font-size: var(--font-size-medium);
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+/* Efect hover pentru linkurile buton */
+#videoclip .button-container a:hover {
+    background-color: var(--culoare-secundara);
+    color: var(--culoare-text);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Stiluri pentru link-ul "Mergi la începutul paginii" */
+#link-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--culoare-principala);
+    color: var(--culoare-accente);
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 20px;
+    opacity: 0.7;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+}
+
+#link-top:hover {
+    opacity: 1;
+    background-color: var(--culoare-secundara);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#link-top span {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
+
+#link-top:hover::after {
+    content: "Mergi la începutul paginii";
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--culoare-text);
+    color: var(--culoare-background);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: var(--font-size-small);
+    white-space: nowrap;
+}
+
+/* Grid layout pentru secțiuni */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Defines 4 equal-width columns */
+    gap: var(--grid-gap-large); /* Spacing between items */
+    grid-template-areas:
+       
+        "tabel-container tabel-container tabel-container tabel-container"
+        "reduceri reduceri intrebari_frecvente intrebari_frecvente"
+        "videoclip descriere intrebari_frecvente intrebari_frecvente"
+        "parteneri parteneri parteneri parteneri";
+}
+
+#descriere, #videoclip, #reduceri, #intrebari_frecvente, #parteneri {
+    padding: var(--spacing-medium); /* Add padding for spacing inside elements */
+}
+
+#descriere {
+    grid-area: descriere; /* Position #descriere element according to grid-area */
+}
+
+#videoclip {
+    grid-area: videoclip; /* Corrected typo from #videocliop to #videoclip */
+}
+
+#reduceri {
+    grid-area: reduceri; /* Position #reduceri element according to grid-area */
+}
+
+#intrebari_frecvente {
+    grid-area: intrebari_frecvente; /* Position #intrebari_frecvente element */
+}
+
+#parteneri {
+    grid-area: parteneri; /* Position #parteneri element */
+}
+
+#tabel-container {
+    grid-area: tabel-container; /* Position #tabel-container element */
+}
+/* Stiluri pentru fiecare div din grid */
+.grid-container > div {
+    background-color: #f1f1f1;
+    padding: var(--spacing-medium);
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+}
+
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            
+            "reduceri"
+            "intrebari_frecvente"
+            "videoclip"
+            "descriere"
+            "parteneri";
+        gap: var(--grid-gap-small);
+        width: 100%;
+    }
+
+    .grid-container > div {
+        text-align: left;
+    }
+}
+
+/* Stiluri pentru containerul de produse */
+.produs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Stiluri pentru fiecare produs */
+.produs {
+    background-color: rgb(240, 220, 201);
+    border: 3px solid rgb(0, 0, 0);
+    margin: var(--spacing-large);
+    padding: var(--spacing-small);
+    width: 300px;
+    color: rgb(0, 0, 0);
+}
+
+/* Stiluri specifice pentru diferite secțiuni */
+
+/* Stiluri pentru titluri */
+h1, h2, h3 {
+    color: var(--culoare-principala);
+}
+
+/* Media Queries pentru responsive design */
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: var(--font-size-small);
+    }
+
+    .container {
+        padding: 0 var(--spacing-small);
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: var(--grid-gap-small);
+    }
+
+    .produs-container {
+        display: block;
+    }
+
+    .produs {
+        width: 100%;
+        margin-bottom: var(--spacing-small);
+    }
+
+    body, html {
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .tabel-container {
+        overflow-x: auto;
+    }
+}
+
+/* Stiluri pentru tabele */
+#stilizare-tabel {
+    width: 100%;
+    border-collapse: collapse;
+    
+    font-size: var(--font-size-large);
+}
+
+#stilizare-tabel caption {
+    text-align: center;
+    font-size: var(--font-size-xlarge);
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--culoare-principala);
+    font-size: 30px;
+}
+
+thead {
+    background-color: var(--culoare-principala);
+    color: white;
+}
+
+thead th {
+    padding: var(--spacing-medium);
+    text-align: center;
+    font-size: var(--font-size-large);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+tbody td {
+    padding: var(--spacing-medium);
+    text-align: center;
+    border: 2px solid #ddd;
+}
+
+tbody td:nth-child(odd) {
+    border-right: 3px solid var(--culoare-principala);
+}
+
+tbody td:nth-child(even) {
+    border-left: 3px solid var(--culoare-secundara);
+}
+
+thead, tfoot {
+    border-bottom: 3px solid var(--culoare-principala);
+}
+
+tfoot {
+    border-top: 3px solid var(--culoare-secundara);
+    background-color: var(--culoare-principala);
+    color: white;
+}
+
+/* Container pentru tabele */
+.tabel-container {
+    width: 100%;
+   margin: 0px;
+}
+
+/* Stiluri pentru iframe-ul din secțiunea video */
+#videoclip iframe {
+    border: 5px solid var(--culoare-principala); /* Adaugă border doar pentru iframe */
+    border-radius: 10px; /* Colțuri rotunjite pentru iframe */
+    width: 100%; /* Asigură că iframe-ul ocupă întreaga lățime disponibilă */
+    max-width: 560px; /* Limitează lățimea maximă pentru a se potrivi pe ecrane mari */
+    height: 315px; /* Înălțimea iframe-ului */
+    display: block; /* Elimină spațiul dintre iframe și containerul părinte */
+    margin-bottom: 0; /* Elimină orice spațiu sub iframe */
+}
+
+/* Stiluri pentru containerul butoanelor video */
+#videoclip .button-container {
+    display: flex;
+    justify-content: right;
+    gap: 0;
+    margin: 0;
+    padding: 0; /* Asigură-te că nu există padding suplimentar */
+   
+}
+
+/* Stiluri pentru linkurile buton */
+#videoclip .button-container a {
+    background-color: var(--culoare-principala);
+    color: var(--culoare-accente);
+    text-decoration: none;
+    padding: var(--spacing-small) var(--spacing-medium);
+    margin: 0; /* Elimină orice margine între butoane */
+    border-radius: 0 0 7px 7px; /* Rotunjire doar pe colțurile de jos */
+    font-size: var(--font-size-medium);
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+
+/* Efect hover pentru linkurile buton */
+#videoclip .button-container a:hover {
+    background-color: var(--culoare-secundara);
+    color: var(--culoare-text);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#imagine-efect {
+    margin: 30px;
+    position: relative;
+    background-image: url("/resurse/imagini/alte_poze/pozaE.jpg");
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    filter: brightness(100%) grayscale(0);
+    transition: all 2s linear;
+}
+
+#imagine-efect:after, 
+#imagine-efect:before {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 1s linear;
+}
+
+#imagine-efect:after {
+    background-color: rgb(0, 0, 255);
+    mix-blend-mode: lighten;
+    opacity: 0; /* Ascunde efectul inițial */
+}
+
+#imagine-efect:before {
+    background-color: rgb(205, 0, 255);
+    mix-blend-mode: darken;
+    opacity: 0; /* Ascunde efectul inițial */
+}
+
+#imagine-efect:hover {
+    filter: brightness(200%) grayscale(20%);
+}
+
+#imagine-efect:hover:after,
+#imagine-efect:hover:before {
+    opacity: 0.7; /* Afișează efectul la hover */
+ 
+}
+
+/* reflection */
+
+
+#text, #text-reflectat {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+#text {
+    position: relative;
+   
+}
+
+#text-reflectat {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    transform-origin: top;  /* Folosim top pentru a face ca reflexia să se alungească în jos */
+    transform: rotateX(180deg) skew(-45deg) scaleY(0.5) translate(10px, -25px);
+    opacity: 0.55;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Tranziție pentru efectul de hover */
+}
+
+#text:hover #text-reflectat {
+    transform: rotateX(180deg) skew(-45deg) scaleY(2.5) translate(10px, -25px);
+    transition: transform 0.3s ease; /* Smooth transition */
+    
+   
+   
+}
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+/* Stiluri generale pentru print */
+@media print {
+    /* Setarea marginilor pentru pagini alternante */
+    @page :left {
+        margin-left: 2cm;
+        margin-right: 1cm;
+    }
+
+    @page :right {
+        margin-left: 1cm;
+        margin-right: 2cm;
+    }
+
+    /* Ascunderea elementelor media și a linkurilor către începutul paginii */
+    img, video, iframe, .media-description, .back-to-top {
+        display: none !important;
+    }
+
+    /* Afișarea gridului ca block */
+    .grid-container {
+        display: block;
+    }
+
+    /* Linkurile afișate ca text normal */
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    /* Banner-ul din footer afișat în dreapta-sus pe prima pagină */
+    footer p.banner {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%; /* jumătate din lățimea conținutului paginii */
+        border: 4px double black;
+        padding: 10px;
+        text-align: center;
+        background: white;
+        z-index: 10;
+    }
+
+    /* Headingul de nivel 1 și meniul */
+    h1.site-title {
+        text-align: center;
+        page-break-after: avoid;
+    }
+
+    nav.menu {
+        display: block;
+    }
+
+    nav.menu ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    nav.menu ul li {
+        margin: 5px 0;
+    }
+
+    nav.menu ul ul {
+        margin-left: 20px;
+    }
+
+    /* Page breaks înaintea footerului */
+    footer {
+        page-break-before: always;
+    }
+
+    /* Watermark pe fiecare pagină */
+    @page {
+        size: auto;
+        margin: 2cm;
+    }
+
+    /* Watermark pe fiecare pagină - element vizibil */
+    #watermark {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 10%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 2em;
+        color: rgba(0, 0, 0, 0.3);
+    }
+
+
+    /* Ascunderea butonului de scroll în sus */
+    #link-top {
+        display: none !important;
+    }
+}

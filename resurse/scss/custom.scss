@@ -1,0 +1,97 @@
+// Importă fișierul SCSS al Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// Definirea temelor și variabilelor personalizate
+
+// Tema 1
+$primary: #b22222; // Culoare principală
+$secondary: #f3a81e; // Culoare secundară
+$background-color-theme1: #2f2f2f; // Fundal pentru tema 1
+$font-color-theme1: #333; // Culoare font pentru tema 1
+
+// Tema 2
+$primary-theme2: #e74c3c; // Culoare principală pentru tema 2
+$secondary-theme2: #f39c12; // Culoare secundară pentru tema 2
+$background-color-theme2: #2c3e50; // Fundal pentru tema 2
+$font-color-theme2: #ecf0f1; // Culoare font pentru tema 2
+
+// Alte variabile
+$font-family: 'Arial', sans-serif; // Familia de font
+$border-radius: 5px; // Raza border
+$heading-font-size: 2.5rem; // Dimensiunea headingurilor
+
+// Stiluri personalizate pentru teme
+
+// Tema generală
+body {
+  background-color: $background-color-theme1;
+  color: $font-color-theme1;
+  font-family: $font-family;
+}
+
+// Personalizare butoane
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  color: #fff;
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-size: $heading-font-size;
+}
+
+// Responsivitate pentru ecrane medii și mari
+@media (min-width: 768px) {
+  body {
+    background-color: $background-color-theme2;
+    color: $font-color-theme2;
+  }
+
+  .btn-primary {
+    background-color: $primary-theme2;
+    border-color: $primary-theme2;
+  }
+
+  .btn-secondary {
+    background-color: $secondary-theme2;
+    border-color: $secondary-theme2;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    background-color: $background-color-theme2;
+    color: $font-color-theme2;
+  }
+
+  .btn-primary {
+    background-color: $primary-theme2;
+    border-color: $primary-theme2;
+  }
+
+  .btn-secondary {
+    background-color: $secondary-theme2;
+    border-color: $secondary-theme2;
+  }
+}
+
+// Corectare stiluri Bootstrap
+.btn {
+  border-radius: $border-radius;
+}
+
+// Headings
+h1 {
+  font-size: $heading-font-size;
+}
+
+h2 {
+  font-size: $heading-font-size - 0.5rem;
+}
