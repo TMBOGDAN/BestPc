@@ -11862,7 +11862,7 @@ body {
   color: #fff;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
 }
 
@@ -11872,12 +11872,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     color: #ecf0f1;
   }
   .btn-primary {
-    background-color: #e74c3c;
-    border-color: #e74c3c;
+    background-color: #b10202;
+    border-color: #b10202;
   }
   .btn-secondary {
-    background-color: #f39c12;
-    border-color: #f39c12;
+    background-color: #b10202;
+    border-color: #b10202;
   }
 }
 @media (min-width: 1200px) {
@@ -11886,23 +11886,23 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     color: #ecf0f1;
   }
   .btn-primary {
-    background-color: #e74c3c;
-    border-color: #e74c3c;
+    background-color: #b10202;
+    border-color: #b10202;
   }
   .btn-secondary {
-    background-color: #f39c12;
-    border-color: #f39c12;
+    background-color: #b10202;
+    border-color: #b10202;
   }
 }
 .btn {
   border-radius: 5px;
 }
 
-h1, .h1 {
+h1 {
   font-size: 2.5rem;
 }
 
-h2, .h2 {
+h2 {
   font-size: 2rem;
 }
 

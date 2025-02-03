@@ -1,0 +1,26 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme=dark] {
+  --bg-color: #090c1a;
+  --text-color: #ffffff;
+}
+[data-theme=dark] header {
+  border-color: #ffffff;
+}
+[data-theme=dark] nav {
+  background-color: #090c1a;
+}
+[data-theme=dark] .nav-links a {
+  color: #000000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zY3NzL3RlbWEuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJO0VBQ0E7OztBQUdGO0VBQ0U7RUFDQTs7QUFFQTtFQUNFOztBQUVGO0VBQ0U7O0FBR0E7RUFDRTs7O0FBTU47RUFDRTtFQUNBO0VBQ0EiLCJmaWxlIjoidGVtYS5jc3MifQ== */

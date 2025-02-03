@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ro">
+   
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="/resurse/js/produse.js"></script>
+    
+   
+    <%- include('../fragmente/head') %>
+<body>
+    <%- include('../fragmente/header') %>
+    <link rel="stylesheet" href="/resurse/css/tema.css">
+    
+      
+      
+
+    <div class="container mt-4">
+        <h2>Produse - <%= categorieSelectata %> - <%= subcategorieSelectata %></h2>
+        
+        <form id="filtre-form" action="/produse" method="get" class="row g-3">
+            
+            <div class="col-md-4">
+                <label for="nume" class="form-label">Nume produs:</label>
+                <input type="text" id="nume" name="nume" class="form-control">
+            </div>
+            
+            <div class="col-md-4">
+                <label for="pret_min" class="form-label">Preț Min: <span id="pret_min_label">0</span></label>
+                <input type="range" id="pret_min" name="pret_min" min="0" max="15000" step="10" class="form-range" oninput="updatePret()">
+            </div>
+            
+            <div class="col-md-4">
+                <label for="pret_max" class="form-label">Preț Max: <span id="pret_max_label">15000</span></label>
+                <input type="range" id="pret_max" name="pret_max" min="0" max="15000" step="10" class="form-range" oninput="updatePret()">
+            </div>
+            
+            <div class="col-md-4">
+                <label for="categorie" class="form-label">Categorie:</label>
+                <select id="categorie" name="categorie" class="form-select">
+                    <option value="toate">Oricare</option>
+                    <% categories.forEach(categorie => { %>
+                        <option value="<%= categorie %>" <%= categorieSelectata === categorie ? 'selected' : '' %>><%= categorie %></option>
+                    <% }); %>
+                </select>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="subcategorie" class="form-label">Subcategorie:</label>
+                <select id="subcategorie" name="subcategorie" class="form-select">
+                    <option value="oricare">Oricare</option>
+                    <% subcategories.forEach(subcategorie => { %>
+                        <option value="<%= subcategorie %>" <%= subcategorieSelectata === subcategorie ? 'selected' : '' %>><%= subcategorie %></option>
+                    <% }); %>
+                </select>
+            </div>
+            
+            <div class="col-md-4">
+                <label class="form-label">Reduceri:</label>
+                <div class="btn-group">
+                    <input type="radio" class="btn-check" name="reduceri" value="oricare" id="reduceri_oricare" checked>
+                    <label class="btn btn-outline-primary" for="reduceri_oricare">Oricare</label>
+                    <input type="radio" class="btn-check" name="reduceri" value="true" id="reduceri_true">
+                    <label class="btn btn-outline-primary" for="reduceri_true">Da</label>
+                    <input type="radio" class="btn-check" name="reduceri" value="false" id="reduceri_false">
+                    <label class="btn btn-outline-primary" for="reduceri_false">Nu</label>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label class="form-label">Culoare:</label>
+                <div class="btn-group">
+                    <input type="checkbox" class="btn-check" name="culoare" value="Negru" id="culoare_negru">
+                    <label class="btn btn-outline-dark" for="culoare_negru">Negru</label>
+                    <input type="checkbox" class="btn-check" name="culoare" value="Argintiu" id="culoare_argintiu">
+                    <label class="btn btn-outline-secondary" for="culoare_argintiu">Argintiu</label>
+                    <input type="checkbox" class="btn-check" name="culoare" value="Alb" id="culoare_alb">
+                    <label class="btn btn-outline-light" for="culoare_alb">Alb</label>
+                </div>
+            </div>
+            
+            <div class="col-12 d-flex gap-2">
+                <button type="submit" class="btn btn-primary d-flex align-items-center">
+                    
+                    <i class="bi bi-funnel"></i> <span class="d-none d-md-inline ms-2">Filtrează</span>
+                </button>
+                <button type="reset" class="btn btn-danger d-flex align-items-center">
+                    <i class="bi bi-arrow-clockwise"></i> <span class="d-none d-md-inline ms-2">Resetează</span>
+                </button>
+            </div>
+        </form>
+
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <button onclick="sorteaza('asc')" class="btn btn-secondary d-flex align-items-center">
+                    <i class="bi bi-arrow-up"></i> <span class="d-none d-md-inline ms-2">Sortare Ascendent</span>
+                </button>
+                <button onclick="sorteaza('desc')" class="btn btn-secondary d-flex align-items-center">
+                    <i class="bi bi-arrow-down"></i> <span class="d-none d-md-inline ms-2">Sortare Descendent</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+            <% produse.forEach(produs => { %>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/resurse/imagini/poze-prod/<%= produs.imagine %>" class="card-img-top" alt="<%= produs.nume %>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="/produs/<%= produs.id %>" class="text-decoration-none text-dark">
+                                    <%= produs.nume %>
+                                </a>
+                            </h5>
+                            <p class="card-text"><%= produs.descriere %></p>
+                            <p class="card-text">Preț: <%= produs.pret %> RON</p>
+                            <p class="card-text">Reducere: <%= produs.caracteristica_booleana ? 'Da' : 'Nu' %></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        
+    </div>
+
+    <%- include('../fragmente/footer') %>
+</body>
+</html>

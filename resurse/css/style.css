@@ -4,7 +4,7 @@
     --culoare-secundara: #ff0808;
     --culoare-accente: #ffffff;
     --culoare-text: #000000;
-    --culoare-background: #2f2f2f;
+    --culoare-background: white;
     --culoare-link-vizitat: #8b0000; /* Adăugat variabilă pentru linkuri vizitate */
     --color-link-visited: #8b0000; /* Variabilă pentru linkuri vizitate */
     --color-hover-external: #ff0808; /* Variabilă pentru hover pe linkuri externe */
@@ -29,7 +29,7 @@ header {
     background-color: var(--culoare-principala);
     padding: var(--spacing-large);
     text-align: center;
-    border: 10px solid #ccc;
+    border: 10px solid #b9b8b8;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: var(--spacing-large) 0;
@@ -86,6 +86,7 @@ button:hover {
 footer {
     background-color: var(--culoare-principala);
     color: var(--culoare-accente);
+    margin-top: 20px;
 }
 
 /* Linkuri */
@@ -280,24 +281,9 @@ main a:active, .grid-container a:active, .tabel-container a:active, footer a:act
     }
 }
 
-/* Stiluri pentru containerul de produse */
-.produs-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 
-/* Stiluri pentru fiecare produs */
-.produs {
-    background-color: rgb(240, 220, 201);
-    border: 3px solid rgb(0, 0, 0);
-    margin: var(--spacing-large);
-    padding: var(--spacing-small);
-    width: 300px;
-    color: rgb(0, 0, 0);
-}
 
-/* Stiluri specifice pentru diferite secțiuni */
+
 
 /* Stiluri pentru titluri */
 h1, h2, h3 {

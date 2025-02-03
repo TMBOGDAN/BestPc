@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<%- include('../fragmente/head') %>   <!-- Include head fragment -->
+
+
+
+<body>
+    <%- include('../fragmente/header') %> <!-- Include header fragment -->
+
+    
+   <a href="/produse">Înapoi la lista de produse</a>
+   
+        <div class="produs-container">
+
+            <h1><%= produs.nume %></h1>
+            <img src="/resurse/imagini/poze-prod/<%= produs.imagine %>" alt="<%= produs.nume %>">
+            <p><strong>Descriere:</strong> <%= produs.descriere %></p>
+            <p><strong>Categorie:</strong> <%= produs.categorie_mare %></p>
+            <p><strong>Subcategorie:</strong> <%= produs.subcategorie %></p>
+            <p><strong>Preț:</strong> <%= produs.pret %> RON</p>
+            <p><strong>Stoc:</strong> <%= produs.caracteristica_numerica_1 %></p>
+            <p><strong>Livrare:</strong> <%= produs.caracteristica_numerica_2 %> zile lucratoare</p>
+            <p><strong>Data introducerii:</strong> <%= new Date(produs.data_introducere).toLocaleDateString("ro-RO") %></p>
+            <p><strong>Culoare:</strong> <%= produs.culoare %></p>
+           <p><strong>Specificatii:</strong> <%=produs.caracteristici_multiple %> </p>
+           
+    
+        </div>
+    
+   
+        
+    
+   
+
+
+
+    <%- include('../fragmente/footer') %>
+
+</body>
+
+
+</html>

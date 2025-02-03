@@ -8,8 +8,9 @@ $breakpoint: 768px;
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  background-color: #333;
+  background-color: #b9b8b8;
   color: #fff;
+  border-radius: 15px;
 
   
 
@@ -46,7 +47,7 @@ $breakpoint: 768px;
         transition: color 0.3s;
 
         &:hover {
-          color: #ff5722;
+          color: #fceb00;
         }
       }
 

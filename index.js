@@ -6,6 +6,157 @@ const sharp = require('sharp');
 const sass = require('sass');
 const app = express();
 const port = 3000;
+const pg=require('pg');
+const { title } = require('process');
+const Client=pg.Client;
+
+
+
+
+const knex = require('knex')({
+  client:'pg',
+  connection:{
+    host:'localhost',
+    user:'postgres',
+    password:'parola123',
+    database:'postgres',
+    port:5433 ,
+  
+  }
+});
+
+//inceput
+
+
+
+
+
+
+
+
+app.get("/produse", async (req, res) => {
+  try {
+    // Obținem categoriile (majoră și subcategorie)
+    const categories = await knex.raw(`
+      SELECT unnest(enum_range(NULL::categ_produse)) AS categorie
+    `);
+
+    const subcategories = await knex.raw(`
+      SELECT unnest(enum_range(NULL::tipuri_produse)) AS subcategorie
+    `);
+
+    let query = knex("produse");
+
+    // FILTRARE: Categorie (categ_produse)
+    const categorieSelectata = req.query.categorie || "toate";
+    if (categorieSelectata !== "toate") {
+      query.where("categorie_mare", categorieSelectata);
+    }
+
+    // FILTRARE: Subcategorie (tipuri_produse)
+    const subcategorieSelectata = req.query.subcategorie || "oricare";
+    if (subcategorieSelectata !== "oricare") {
+      query.where("subcategorie", subcategorieSelectata);
+    }
+
+    // FILTRARE: Nume produs (caută produsele care conțin termenul introdus)
+    if (req.query.nume) {
+      query.whereRaw(`nume ILIKE ?`, [`%${req.query.nume}%`]);
+    }
+
+    // FILTRARE: Preț (range)
+    if (req.query.pret_min && req.query.pret_max) {
+      query.whereBetween("pret", [req.query.pret_min, req.query.pret_max]);
+    }
+
+    // FILTRARE: RAM (select multiplu)
+    if (req.query.ram && Array.isArray(req.query.ram)) {
+      query.whereIn("caracteristica_numeric_1", req.query.ram);
+    }
+
+    // FILTRARE: Stocare (select multiplu)
+    if (req.query.stocare && Array.isArray(req.query.stocare)) {
+      query.whereIn("caracteristica_numeric_2", req.query.stocare);
+    }
+
+    // FILTRARE: Reduceri (radio)
+    if (req.query.reduceri) {
+      if (req.query.reduceri === "true") {
+        query.where("caracteristica_booleana", true);
+      } else if (req.query.reduceri === "false") {
+        query.where("caracteristica_booleana", false);
+      }
+    }
+
+   // FILTRARE: Culoare (checkbox-uri)
+if (req.query.culoare) {
+  let culori = Array.isArray(req.query.culoare) ? req.query.culoare : [req.query.culoare];
+  console.log("Filtru culori aplicat:", culori);  // DEBUG
+  query.whereIn("culoare", culori);
+}
+
+// BACKEND: Sortare în funcție de preț
+if (req.query.sort) {
+  let ord = req.query.sort === "asc" ? "asc" : "desc";
+  query.orderBy("pret", ord);
+}
+    // Execută interogarea pentru a obține produsele
+    const produse = await query;
+
+    // Verifică dacă au fost găsite produse
+    const nuSuntProduse = produse.length === 0;
+
+    res.render("pagini/produse", {
+      produse,
+      categories: categories.rows.map(row => row.categorie),
+      subcategories: subcategories.rows.map(row => row.subcategorie),
+      categorieSelectata,
+      subcategorieSelectata,
+      ipUtilizator: req.ip,
+      nuSuntProduse, // Adaugă această variabilă pentru a verifica dacă nu există produse
+      title: "Lista Produse"
+    });
+  } catch (err) {
+    console.error("Eroare la interogare:", err);
+    res.status(500).send("Eroare server");
+  }
+});
+
+
+
+
+
+
+
+app.get("/produs/:id", (req, res) => {
+  let idProdus = parseInt(req.params.id); // Convertim ID-ul în număr
+
+  if (isNaN(idProdus)) {
+    return res.status(400).send("ID invalid"); // Verificăm dacă e un număr valid
+  }
+
+  knex("produse")
+    .where({ id: idProdus }) // 'id' trebuie să fie numele corect al coloanei din SQL
+    .first() // Luăm un singur produs
+    .then((produs) => {
+      if (!produs) {
+        return res.status(404).send("Produsul nu a fost găsit");
+      }
+      res.render("pagini/produs", {
+        produs: produs,
+        ipUtilizator: req.ip,
+        title: produs.nume || "Detalii Produs",
+      });
+    })
+    .catch((err) => {
+      console.error("Eroare la interogare:", err);
+      res.status(500).send("Eroare server");
+    });
+});
+
+
+
+//sfarsit
 
 // Define the folder for static resources
 app.use('/resurse', express.static(path.join(__dirname, 'resurse')));
@@ -226,6 +377,14 @@ app.get('/istoric', (req, res) => {
     title: 'Istoric'       // Pass the title variable to the view
   });
 });
+
+
+
+//etapa 6
+
+
+
+//final
 
 // Server error handling
 app.use((req, res, next) => {

@@ -1,0 +1,32 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+  }
+  
+  [data-theme="dark"] {
+    --bg-color: #090c1a;
+    --text-color: #ffffff;
+
+    header{
+      border-color: #ffffff;
+    }
+    nav{
+      background-color:  #090c1a;
+    }
+    .nav-links{
+      a{
+        color: #000000;
+      }
+    }
+  
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+
+
+ 

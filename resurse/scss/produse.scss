@@ -1,0 +1,29 @@
+// Importă Bootstrap și variabilele
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Modificări personalizate
+$border-radius: 8px;  // Raza borderului
+$border-width: 2px;   // Grosimea borderului
+$primary: #007bff;    // Culoarea principală (poți schimba)
+$secondary: #6c757d;  // Culoarea secundară
+$btn-padding-y: 0.5rem;
+$btn-padding-x: 1rem;
+
+
+
+// Personalizare slider range
+$form-range-thumb-width: calc(1.5 * 1rem);  // 50% mai mare decât font-size-ul
+$form-range-thumb-bg: $primary;
+$form-range-track-bg: lighten($primary, 20%);
+
+.col-md-4 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+
+
+// Reimportă Bootstrap cu noile variabile
+@import "node_modules/bootstrap/scss/bootstrap";
